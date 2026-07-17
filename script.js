@@ -1,85 +1,43 @@
-body{
+const gift=document.getElementById("gift");
 
-    margin:0;
+const content=document.getElementById("content");
 
-    padding:0;
+const music=document.getElementById("music");
 
-    background:#ffd6e7;
+gift.onclick=function(){
 
-    font-family:Arial;
+gift.style.display="none";
 
-    text-align:center;
+content.style.display="block";
 
-}
+music.play();
 
-#gift{
-
-    font-size:120px;
-
-    margin-top:80px;
-
-    cursor:pointer;
+createHeart();
 
 }
 
-#gift p{
+function createHeart(){
 
-    font-size:25px;
+setInterval(()=>{
 
-}
+const heart=document.createElement("div");
 
-#content{
+heart.innerHTML="❤️";
 
-    display:none;
+heart.className="heart";
 
-    animation:fade 1s;
+heart.style.left=Math.random()*100+"vw";
 
-}
+heart.style.fontSize=(20+Math.random()*30)+"px";
 
-.gallery{
+document.body.appendChild(heart);
 
-    display:flex;
+setTimeout(()=>{
 
-    justify-content:center;
+heart.remove();
 
-    gap:20px;
+},5000);
 
-    flex-wrap:wrap;
-
-    margin-top:20px;
-
-}
-
-.gallery img{
-
-    width:220px;
-
-    border-radius:20px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
-
-    transition:.3s;
-
-}
-
-.gallery img:hover{
-
-    transform:scale(1.05);
-
-}
-
-@keyframes fade{
-
-    from{
-
-        opacity:0;
-
-    }
-
-    to{
-
-        opacity:1;
-
-    }
+},300);
 
 }
