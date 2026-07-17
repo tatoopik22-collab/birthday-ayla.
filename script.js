@@ -39,10 +39,22 @@ passwordInput.addEventListener("keypress", function(e){
 
     }
 
-});
+}
+);
 
 document.getElementById("giftButton").onclick = function(){
 
     alert("🎁 Selamat datang ❤️\n\nHadiahnya akan kita buat di langkah berikutnya 😊");
 
-};
+};// Login Password
+function checkPassword() {
+    const password = document.getElementById("password").value;
+
+    if (password === "1807") {
+        document.getElementById("login-page").style.display = "none";
+        document.getElementById("main-page").style.display = "block";
+    } else {
+        alert("Password salah ❤️");
+    }
+}
+
