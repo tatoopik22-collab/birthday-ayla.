@@ -1,60 +1,32 @@
 const PASSWORD = "1807";
 
-const loginPage = document.getElementById("login-page");
-const mainPage = document.getElementById("main-page");
-const errorText = document.getElementById("error");
-const passwordInput = document.getElementById("password");
-
 function checkPassword() {
+    const input = document.getElementById("password").value;
 
-    if (passwordInput.value === PASSWORD) {
-
-        loginPage.style.opacity = "0";
-
-        setTimeout(() => {
-
-            loginPage.style.display = "none";
-
-            mainPage.style.display = "flex";
-
-        }, 500);
-
-    } else {
-
-        errorText.innerHTML = "❌ Password Salah!";
-
-        passwordInput.value = "";
-
-        passwordInput.focus();
-
-    }
-
-}
-
-passwordInput.addEventListener("keypress", function(e){
-
-    if(e.key === "Enter"){
-
-        checkPassword();
-
-    }
-
-}
-);
-
-document.getElementById("giftButton").onclick = function(){
-
-    alert("🎁 Selamat datang ❤️\n\nHadiahnya akan kita buat di langkah berikutnya 😊");
-
-};// Login Password
-function checkPassword() {
-    const password = document.getElementById("password").value;
-
-    if (password === "1807") {
+    if (input === PASSWORD) {
         document.getElementById("login-page").style.display = "none";
-        document.getElementById("main-page").style.display = "block";
+        document.getElementById("main-page").style.display = "flex";
     } else {
-        alert("Password salah ❤️");
+        document.getElementById("error").innerHTML = "❌ Password Salah!";
     }
 }
 
+// buka hadiah
+document.addEventListener("DOMContentLoaded", () => {
+
+    const gift = document.getElementById("giftButton");
+
+    if(gift){
+        gift.onclick = function(){
+
+            document.getElementById("gift").style.display="none";
+
+            document.getElementById("content").style.display="block";
+
+            const music=document.getElementById("music");
+            if(music) music.play();
+
+        };
+    }
+
+});
