@@ -3,87 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday ❤️</title>
-
+    <title>Happy Birthday Ayla ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- LOGIN -->
 <div id="login-page">
 
     <div class="login-box">
-
         <h1>🎂 Happy Birthday</h1>
-
-        <p>Masukkan Password</p>
+        <p>Masukkan Password 🎁</p>
 
         <input
             type="password"
             id="password"
             placeholder="Password">
 
+        <br><br>
+
         <button onclick="checkPassword()">
             Masuk ❤️
         </button>
 
         <p id="error"></p>
-
     </div>
 
 </div>
 
 <!-- HALAMAN UTAMA -->
-<div id="main-page">
-
-    <div class="hero">
-
-        <h1>Happy Birthday Ayla ❤️</h1>
-
-        <p>
-            Ada hadiah kecil buat kamu...
-        </p>
-
-        <button id="giftButton">
-            🎁 Buka Hadiah
-        </button>
-
-    </div>
-
-</div>
 <div id="main-page" style="display:none;">
 
-    <h1>🎂 Happy Birthday Ayla ❤️</h1>
+    <h1>Happy Birthday Ayla ❤️</h1>
     <h2>18 Juli</h2>
 
     <div class="gallery">
+
         <img src="assets/photo1.jpg">
         <img src="assets/photo2.jpg">
         <img src="assets/photo3.jpg">
+
     </div>
 
-    <div class="message">
+    <div class="letter">
+
         <h2>💌 Untuk Ayla</h2>
 
         <p>
-        Selamat ulang tahun ya cantik ❤️<br><br>
+            Selamat ulang tahun yaa cantik ❤️<br><br>
 
-        Semoga semua impianmu tercapai, selalu sehat, selalu bahagia, dan
-        semoga kita bisa terus bersama sampai kapan pun.
+            Semoga semua impianmu tercapai, selalu sehat,
+            selalu bahagia, dan semoga aku masih bisa
+            nemenin kamu sampai ulang tahun berikutnya.
 
-        Terima kasih sudah hadir di hidupku.
+            Makasih udah hadir di hidupku.
 
-        I Love You ❤️
+            I Love You ❤️
         </p>
 
     </div>
 
-    <button id="giftButton">
+    <button id="giftButton" onclick="openGift()">
         🎁 Buka Hadiah
     </button>
 
 </div>
+
+<audio id="music" autoplay loop>
+    <source src="assets/music.mp3" type="audio/mp3">
+</audio>
+
 <script src="script.js"></script>
 
 </body>
