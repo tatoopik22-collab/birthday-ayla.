@@ -1,43 +1,48 @@
-const gift=document.getElementById("gift");
+const PASSWORD = "1807";
 
-const content=document.getElementById("content");
+const loginPage = document.getElementById("login-page");
+const mainPage = document.getElementById("main-page");
+const errorText = document.getElementById("error");
+const passwordInput = document.getElementById("password");
 
-const music=document.getElementById("music");
+function checkPassword() {
 
-gift.onclick=function(){
+    if (passwordInput.value === PASSWORD) {
 
-gift.style.display="none";
+        loginPage.style.opacity = "0";
 
-content.style.display="block";
+        setTimeout(() => {
 
-music.play();
+            loginPage.style.display = "none";
 
-createHeart();
+            mainPage.style.display = "flex";
 
-}
+        }, 500);
 
-function createHeart(){
+    } else {
 
-setInterval(()=>{
+        errorText.innerHTML = "❌ Password Salah!";
 
-const heart=document.createElement("div");
+        passwordInput.value = "";
 
-heart.innerHTML="❤️";
+        passwordInput.focus();
 
-heart.className="heart";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.fontSize=(20+Math.random()*30)+"px";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-
-heart.remove();
-
-},5000);
-
-},300);
+    }
 
 }
+
+passwordInput.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        checkPassword();
+
+    }
+
+});
+
+document.getElementById("giftButton").onclick = function(){
+
+    alert("🎁 Selamat datang ❤️\n\nHadiahnya akan kita buat di langkah berikutnya 😊");
+
+};
