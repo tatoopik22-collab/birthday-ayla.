@@ -64,4 +64,84 @@ button{
     background:white;
     padding:30px;
     border-radius:20px;
+}/* ================= LOGIN ================= */
+
+#login-page{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(135deg,#ffb6d9,#ffd6e8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
 }
+
+.login-box{
+    background:#fff;
+    padding:35px;
+    width:320px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+    animation:zoom .5s ease;
+}
+
+.login-box h1{
+    color:#ff4d8d;
+    margin-bottom:15px;
+}
+
+.login-box p{
+    margin-bottom:15px;
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    border:2px solid #ffc2d8;
+    border-radius:12px;
+    outline:none;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.login-box button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#ff4d8d;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-box button:hover{
+    background:#ff2675;
+}
+
+#error{
+    margin-top:12px;
+    color:red;
+    font-weight:bold;
+}
+
+#main-page{
+    display:none;
+}
+
+@keyframes zoom{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
