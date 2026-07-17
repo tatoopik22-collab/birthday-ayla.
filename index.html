@@ -3,36 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Ayla ❤️</title>
+    <title>Happy Birthday ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div id="gift">
-    🎁
-    <p>Klik Hadiahnya</p>
-</div>
+<!-- LOGIN -->
+<div id="login-page">
 
-<div id="content">
+    <div class="login-box">
 
-    <h1>Happy Birthday Ayla ❤️</h1>
+        <h1>🎂 Happy Birthday</h1>
 
-    <h2>18 Juli</h2>
+        <p>Masukkan Password</p>
 
-    <div class="gallery">
+        <input
+            type="password"
+            id="password"
+            placeholder="Password">
 
-        <img src="assets/photo1.jpg">
+        <button onclick="checkPassword()">
+            Masuk ❤️
+        </button>
 
-        <img src="assets/photo2.jpg">
-
-        <img src="assets/photo3.jpg">
+        <p id="error"></p>
 
     </div>
 
-    <audio id="music" loop>
-        <source src="assets/music.mp3" type="audio/mpeg">
-    </audio>
+</div>
+
+<!-- HALAMAN UTAMA -->
+<div id="main-page">
+
+    <div class="hero">
+
+        <h1>Happy Birthday Ayla ❤️</h1>
+
+        <p>
+            Ada hadiah kecil buat kamu...
+        </p>
+
+        <button id="giftButton">
+            🎁 Buka Hadiah
+        </button>
+
+    </div>
 
 </div>
 
