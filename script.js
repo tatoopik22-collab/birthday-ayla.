@@ -1,32 +1,28 @@
 const PASSWORD = "1807";
 
+// LOGIN
 function checkPassword() {
     const input = document.getElementById("password").value;
 
     if (input === PASSWORD) {
         document.getElementById("login-page").style.display = "none";
         document.getElementById("main-page").style.display = "block";
-
-        // Musik otomatis
-        const music = document.getElementById("bgMusic");
-        if (music) music.play().catch(() => {});
     } else {
         document.getElementById("error").innerHTML = "❌ Password Salah!";
     }
 }
 
-// Tombol buka hadiah
-document.addEventListener("DOMContentLoaded", () => {
+// TOMBOL HADIAH
+document.addEventListener("DOMContentLoaded", function () {
 
-    const gift = document.getElementById("giftButton");
+    const giftButton = document.getElementById("giftButton");
 
-    if (gift) {
-        gift.onclick = function () {
+    if (giftButton) {
+        giftButton.addEventListener("click", function () {
 
-            document.getElementById("gift").style.display = "none";
-            document.getElementById("content").style.display = "block";
+            alert("🎉 Selamat Ulang Tahun Ayla ❤️\n\nSemoga semua impianmu tercapai, selalu sehat, selalu bahagia, dan aku akan selalu ada buat kamu ❤️");
 
-            alert("❤️ Selamat ulang tahun cantikku ❤️");
-        };
+        });
     }
+
 });
