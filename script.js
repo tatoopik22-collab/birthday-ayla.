@@ -1,31 +1,32 @@
 const PASSWORD = "1807";
 
-const loginPage = document.getElementById("login-page");
-const mainPage = document.getElementById("main-page");
-const passwordInput = document.getElementById("password");
-const error = document.getElementById("error");
-
 function checkPassword() {
-    if (passwordInput.value === PASSWORD) {
+    const input = document.getElementById("password").value;
 
-        loginPage.style.display = "none";
-        mainPage.style.display = "block";
+    if (input === PASSWORD) {
+        document.getElementById("login-page").style.display = "none";
+        document.getElementById("main-page").style.display = "block";
 
-        const music = document.getElementById("music");
-        if (music) {
-            music.play();
-        }
-
+        // Musik otomatis
+        const music = document.getElementById("bgMusic");
+        if (music) music.play().catch(() => {});
     } else {
-        error.innerHTML = "❌ Password Salah!";
-        passwordInput.value = "";
+        document.getElementById("error").innerHTML = "❌ Password Salah!";
     }
 }
 
-function openGift() {
-    alert("🎉 Happy Birthday Ayla ❤️");
-}
+// Tombol buka hadiah
+document.addEventListener("DOMContentLoaded", () => {
 
-window.onload = function () {
-    mainPage.style.display = "none";
-};
+    const gift = document.getElementById("giftButton");
+
+    if (gift) {
+        gift.onclick = function () {
+
+            document.getElementById("gift").style.display = "none";
+            document.getElementById("content").style.display = "block";
+
+            alert("❤️ Selamat ulang tahun cantikku ❤️");
+        };
+    }
+});
