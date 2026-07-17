@@ -1,0 +1,1 @@
+gift.onclick=function(){gift.style.display='none';content.style.display='block';music.play().catch(()=>{});}
