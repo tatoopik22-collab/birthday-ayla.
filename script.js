@@ -1,32 +1,31 @@
 const PASSWORD = "1807";
 
-function checkPassword() {
-    const input = document.getElementById("password").value;
+const loginPage = document.getElementById("login-page");
+const mainPage = document.getElementById("main-page");
+const passwordInput = document.getElementById("password");
+const error = document.getElementById("error");
 
-    if (input === PASSWORD) {
-        document.getElementById("login-page").style.display = "none";
-        document.getElementById("main-page").style.display = "flex";
+function checkPassword() {
+    if (passwordInput.value === PASSWORD) {
+
+        loginPage.style.display = "none";
+        mainPage.style.display = "block";
+
+        const music = document.getElementById("music");
+        if (music) {
+            music.play();
+        }
+
     } else {
-        document.getElementById("error").innerHTML = "❌ Password Salah!";
+        error.innerHTML = "❌ Password Salah!";
+        passwordInput.value = "";
     }
 }
 
-// buka hadiah
-document.addEventListener("DOMContentLoaded", () => {
+function openGift() {
+    alert("🎉 Happy Birthday Ayla ❤️");
+}
 
-    const gift = document.getElementById("giftButton");
-
-    if(gift){
-        gift.onclick = function(){
-
-            document.getElementById("gift").style.display="none";
-
-            document.getElementById("content").style.display="block";
-
-            const music=document.getElementById("music");
-            if(music) music.play();
-
-        };
-    }
-
-});
+window.onload = function () {
+    mainPage.style.display = "none";
+};
